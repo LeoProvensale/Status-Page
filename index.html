@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cloud Status Page</title>
+    <link rel="icon" href="public/favicon-wibond.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="./src/main.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="dark-mode">
+    <aside id="sidebar">
+      <img src="wibond-logo.png" alt="WIBOND" class="logo" />
+      <nav>
+        <button class="nav-btn" data-section="dashboard">Dashboard</button>
+        <button class="nav-btn" data-section="eventos">
+          Eventos por entorno
+        </button>
+        <button class="nav-btn" data-section="historial">
+          Historial de eventos
+        </button>
+        <button class="nav-btn" data-section="graficos">
+          Gráficos comparativos
+        </button>
+        <button class="nav-btn" data-section="kpis">KPIs</button>
+        <button class="nav-btn" data-section="config">Configuración</button>
+      </nav>
+    </aside>
+
+    <main>
+      <p id="login-status" style="text-align: right">Iniciando sesión...</p>
+
+      <section id="dashboard" class="seccion">
+        <h2>Estado Consolidado</h2>
+        <canvas id="grafico-dashboard" height="300"></canvas>
+      </section>
+
+      <section id="eventos" class="seccion" style="display: none">
+        <h2>Eventos por Entorno</h2>
+        <div id="contenedor-eventos"></div>
+      </section>
+
+      <section id="historial" class="seccion" style="display: none">
+        <h2>Historial de eventos</h2>
+        <p>Próximamente...</p>
+      </section>
+
+      <section id="graficos" class="seccion" style="display: none">
+        <h2>Comparativa por Servicio</h2>
+        <div id="grafico-comparativo"></div>
+      </section>
+
+      <section id="kpis" class="seccion" style="display: none">
+        <h2>Indicadores Clave (KPI)</h2>
+        <div id="kpi-datos"></div>
+      </section>
+
+      <section id="config" class="seccion" style="display: none">
+        <h2>Configuración</h2>
+        <label><input type="checkbox" id="modo-toggle" /> Modo oscuro</label>
+      </section>
+    </main>
+  </body>
+</html>
